@@ -19,7 +19,7 @@ spec:
     targetRevision: 6.52.2
     helm:
       valueFiles:
-        - $RashRAJRepo/argocd-apps/values/grafana.yaml         
+        - $RashRAJRepo/argocd_apps/values/grafana.yaml         
   syncPolicy:
     automated:
       prune: true
