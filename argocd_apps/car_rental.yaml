@@ -2,17 +2,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: car-rental-deployment
+  name: carrental-deployment
   namespace: argocd
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: car-rental-app
+      app: carrental
   template:
     metadata:
       labels:
-        app: car-rental-app
+        app: carrental
     spec:
       containers:
       - name: car-rental-app
