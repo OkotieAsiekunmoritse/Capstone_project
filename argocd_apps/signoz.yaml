@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: signoz
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: monitoring
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+  - repoURL: https://github.com/RashRAJ/Capstone_project.git
+    targetRevision: HEAD
+    ref: RashRAJRepo
+  - repoURL: https://charts.signoz.io
+    chart: signoz
+    targetRevision: 0.18.1
+
+    helm:
+      valueFiles:
+        - $RashRAJRepo/argocd_apps/values/signoz.yaml         
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
