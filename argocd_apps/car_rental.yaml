@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: car-rental-app
-        image: ghcr.io/rashraj/car-rental-app
+        image: docker pull ghcr.io/rashraj/car-rental-app:latest
 
         resources:
           limits:
