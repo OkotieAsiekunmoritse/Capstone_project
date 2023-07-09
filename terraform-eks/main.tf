@@ -1,7 +1,7 @@
 data "aws_availability_zones" "available" {}
 
 locals {
-  cluster_name = "rash-eks-${random_string.suffix.result}"
+  cluster_name = "Cap-eks-${random_string.suffix.result}"
 }
 
 resource "random_string" "suffix" {
@@ -15,7 +15,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.19.0"
 
-  name = "rash-vpc"
+  name = "cap-vpc"
 
   cidr = "10.0.0.0/16"
   azs  = slice(data.aws_availability_zones.available.names, 0, 3)
@@ -63,7 +63,7 @@ module "eks" {
       instance_types = ["t3.medium"]
 
       min_size     = 1
-      max_size     = 5
+      max_size     = 3
       desired_size = 3
       disk_size    = 50
     }

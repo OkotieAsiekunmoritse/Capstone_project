@@ -2,11 +2,11 @@
 variable "region" {
   description = "AWS region"
   type        = string
-  default     = "us-east-2"
+  default     = "eu-west-1"
 }
 
 variable "cluster_name" {
   description = "Cluster Name"
   type        = string
-  default     = "RAJ-workloads"
+  default     = "capstone13"
 }

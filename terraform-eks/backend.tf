@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "rajexambuc"
+    bucket = "group13bucket"
     key    = "terraform.tfstate"
-    region = "us-east-2"
+    region = "eu-west-1"
   }
 }
